@@ -1,0 +1,608 @@
+{
+  "schema": "quantum-fly/batch/1",
+  "seeds": [
+    11,
+    17,
+    23,
+    29,
+    31,
+    41,
+    53,
+    67,
+    79,
+    97
+  ],
+  "steps": 640,
+  "means": [
+    {
+      "mode": "coherent",
+      "meanEndDistance": 368.97880225104836,
+      "meanOdor": 0.09951212465387785,
+      "runsVisitingSource": 0
+    },
+    {
+      "mode": "dephased",
+      "meanEndDistance": 359.41718759323436,
+      "meanOdor": 0.1373104519867268,
+      "runsVisitingSource": 0
+    },
+    {
+      "mode": "classical",
+      "meanEndDistance": 159.0358645261438,
+      "meanOdor": 0.6408242684397021,
+      "runsVisitingSource": 10
+    }
+  ],
+  "runs": [
+    {
+      "seed": 11,
+      "mode": "coherent",
+      "steps": 640,
+      "visits": 0,
+      "firstVisitTick": null,
+      "finalDistance": 541.0124245485267,
+      "pathLength": 1348.2713884974758,
+      "contacts": 16,
+      "meanOdor": 0.05939720501325193,
+      "meanPurity": 1,
+      "spikeCount": 2584,
+      "actions": [
+        198,
+        274,
+        140,
+        28
+      ]
+    },
+    {
+      "seed": 11,
+      "mode": "dephased",
+      "steps": 640,
+      "visits": 0,
+      "firstVisitTick": null,
+      "finalDistance": 368.9318581398641,
+      "pathLength": 1172.2972476348614,
+      "contacts": 2,
+      "meanOdor": 0.1852015241165652,
+      "meanPurity": 0.42571274830478034,
+      "spikeCount": 2272,
+      "actions": [
+        183,
+        126,
+        206,
+        125
+      ]
+    },
+    {
+      "seed": 11,
+      "mode": "classical",
+      "steps": 640,
+      "visits": 3,
+      "firstVisitTick": 143,
+      "finalDistance": 27.940610064082193,
+      "pathLength": 1846.0905435592754,
+      "contacts": 1,
+      "meanOdor": 0.7300676508066137,
+      "meanPurity": 0.9999999999999998,
+      "spikeCount": 2889,
+      "actions": [
+        441,
+        90,
+        77,
+        32
+      ]
+    },
+    {
+      "seed": 17,
+      "mode": "coherent",
+      "steps": 640,
+      "visits": 0,
+      "firstVisitTick": null,
+      "finalDistance": 547.1200509003471,
+      "pathLength": 1377.5451991654497,
+      "contacts": 24,
+      "meanOdor": 0.06485020710698196,
+      "meanPurity": 1,
+      "spikeCount": 2572,
+      "actions": [
+        209,
+        278,
+        134,
+        19
+      ]
+    },
+    {
+      "seed": 17,
+      "mode": "dephased",
+      "steps": 640,
+      "visits": 0,
+      "firstVisitTick": null,
+      "finalDistance": 395.24629523885113,
+      "pathLength": 1234.5499999999915,
+      "contacts": 0,
+      "meanOdor": 0.13524572498707332,
+      "meanPurity": 0.4500455183475284,
+      "spikeCount": 2310,
+      "actions": [
+        203,
+        138,
+        187,
+        112
+      ]
+    },
+    {
+      "seed": 17,
+      "mode": "classical",
+      "steps": 640,
+      "visits": 1,
+      "firstVisitTick": 146,
+      "finalDistance": 203.60987794585603,
+      "pathLength": 1897.594066330498,
+      "contacts": 6,
+      "meanOdor": 0.5043793295913958,
+      "meanPurity": 1,
+      "spikeCount": 2559,
+      "actions": [
+        464,
+        71,
+        78,
+        27
+      ]
+    },
+    {
+      "seed": 23,
+      "mode": "coherent",
+      "steps": 640,
+      "visits": 0,
+      "firstVisitTick": null,
+      "finalDistance": 520.8500314625579,
+      "pathLength": 1350.849999999989,
+      "contacts": 0,
+      "meanOdor": 0.18198927466747802,
+      "meanPurity": 1,
+      "spikeCount": 2219,
+      "actions": [
+        200,
+        269,
+        138,
+        33
+      ]
+    },
+    {
+      "seed": 23,
+      "mode": "dephased",
+      "steps": 640,
+      "visits": 0,
+      "firstVisitTick": null,
+      "finalDistance": 333.0035856125693,
+      "pathLength": 1163.3499999999951,
+      "contacts": 0,
+      "meanOdor": 0.16740614388911765,
+      "meanPurity": 0.4337202140202544,
+      "spikeCount": 2166,
+      "actions": [
+        197,
+        109,
+        184,
+        150
+      ]
+    },
+    {
+      "seed": 23,
+      "mode": "classical",
+      "steps": 640,
+      "visits": 3,
+      "firstVisitTick": 154,
+      "finalDistance": 508.6820165937246,
+      "pathLength": 1834.199999999983,
+      "contacts": 0,
+      "meanOdor": 0.6027696076764306,
+      "meanPurity": 0.9999999999999998,
+      "spikeCount": 2527,
+      "actions": [
+        432,
+        84,
+        96,
+        28
+      ]
+    },
+    {
+      "seed": 29,
+      "mode": "coherent",
+      "steps": 640,
+      "visits": 0,
+      "firstVisitTick": null,
+      "finalDistance": 288.5579989602504,
+      "pathLength": 1397.1959122454964,
+      "contacts": 19,
+      "meanOdor": 0.08182640454915631,
+      "meanPurity": 0.9999999999999998,
+      "spikeCount": 2427,
+      "actions": [
+        219,
+        260,
+        137,
+        24
+      ]
+    },
+    {
+      "seed": 29,
+      "mode": "dephased",
+      "steps": 640,
+      "visits": 0,
+      "firstVisitTick": null,
+      "finalDistance": 531.9620778533481,
+      "pathLength": 1241.6214655731346,
+      "contacts": 20,
+      "meanOdor": 0.07900825763646055,
+      "meanPurity": 0.47939264856363495,
+      "spikeCount": 2552,
+      "actions": [
+        218,
+        107,
+        194,
+        121
+      ]
+    },
+    {
+      "seed": 29,
+      "mode": "classical",
+      "steps": 640,
+      "visits": 2,
+      "firstVisitTick": 154,
+      "finalDistance": 227.3431319471206,
+      "pathLength": 1879.7999999999774,
+      "contacts": 0,
+      "meanOdor": 0.48130625339176303,
+      "meanPurity": 0.9999999999999998,
+      "spikeCount": 2563,
+      "actions": [
+        455,
+        78,
+        78,
+        29
+      ]
+    },
+    {
+      "seed": 31,
+      "mode": "coherent",
+      "steps": 640,
+      "visits": 0,
+      "firstVisitTick": null,
+      "finalDistance": 522.7046420905725,
+      "pathLength": 1410.6685103365533,
+      "contacts": 10,
+      "meanOdor": 0.13343397830204423,
+      "meanPurity": 0.9999999999999998,
+      "spikeCount": 2381,
+      "actions": [
+        218,
+        276,
+        132,
+        14
+      ]
+    },
+    {
+      "seed": 31,
+      "mode": "dephased",
+      "steps": 640,
+      "visits": 0,
+      "firstVisitTick": null,
+      "finalDistance": 347.33764105681973,
+      "pathLength": 1241.099999999995,
+      "contacts": 0,
+      "meanOdor": 0.12993330821538035,
+      "meanPurity": 0.4544638212893165,
+      "spikeCount": 2310,
+      "actions": [
+        213,
+        116,
+        190,
+        121
+      ]
+    },
+    {
+      "seed": 31,
+      "mode": "classical",
+      "steps": 640,
+      "visits": 5,
+      "firstVisitTick": 148,
+      "finalDistance": 172.60926994824942,
+      "pathLength": 1874.3499999999842,
+      "contacts": 0,
+      "meanOdor": 0.7434207545752469,
+      "meanPurity": 1,
+      "spikeCount": 2875,
+      "actions": [
+        441,
+        96,
+        89,
+        14
+      ]
+    },
+    {
+      "seed": 41,
+      "mode": "coherent",
+      "steps": 640,
+      "visits": 0,
+      "firstVisitTick": null,
+      "finalDistance": 285.9228593777529,
+      "pathLength": 1403.2151751288332,
+      "contacts": 23,
+      "meanOdor": 0.0893090955515083,
+      "meanPurity": 1,
+      "spikeCount": 2416,
+      "actions": [
+        226,
+        268,
+        119,
+        27
+      ]
+    },
+    {
+      "seed": 41,
+      "mode": "dephased",
+      "steps": 640,
+      "visits": 0,
+      "firstVisitTick": null,
+      "finalDistance": 326.4579200557593,
+      "pathLength": 1278.7054893658158,
+      "contacts": 4,
+      "meanOdor": 0.1333108974789486,
+      "meanPurity": 0.4503996728934198,
+      "spikeCount": 2214,
+      "actions": [
+        220,
+        118,
+        197,
+        105
+      ]
+    },
+    {
+      "seed": 41,
+      "mode": "classical",
+      "steps": 640,
+      "visits": 3,
+      "firstVisitTick": 148,
+      "finalDistance": 108.48595438372134,
+      "pathLength": 1903.1253910570924,
+      "contacts": 2,
+      "meanOdor": 0.6693917519805531,
+      "meanPurity": 1,
+      "spikeCount": 2729,
+      "actions": [
+        465,
+        57,
+        92,
+        26
+      ]
+    },
+    {
+      "seed": 53,
+      "mode": "coherent",
+      "steps": 640,
+      "visits": 0,
+      "firstVisitTick": null,
+      "finalDistance": 183.00917669656013,
+      "pathLength": 1285.5245482724592,
+      "contacts": 19,
+      "meanOdor": 0.10511335206748858,
+      "meanPurity": 1,
+      "spikeCount": 2446,
+      "actions": [
+        195,
+        240,
+        143,
+        62
+      ]
+    },
+    {
+      "seed": 53,
+      "mode": "dephased",
+      "steps": 640,
+      "visits": 0,
+      "firstVisitTick": null,
+      "finalDistance": 178.4958090575021,
+      "pathLength": 1220.8451241540236,
+      "contacts": 10,
+      "meanOdor": 0.19357864644215345,
+      "meanPurity": 0.4232592125615927,
+      "spikeCount": 2473,
+      "actions": [
+        202,
+        126,
+        197,
+        115
+      ]
+    },
+    {
+      "seed": 53,
+      "mode": "classical",
+      "steps": 640,
+      "visits": 4,
+      "firstVisitTick": 148,
+      "finalDistance": 53.397296294585466,
+      "pathLength": 1896.299999999989,
+      "contacts": 0,
+      "meanOdor": 0.7592332878832014,
+      "meanPurity": 1,
+      "spikeCount": 2840,
+      "actions": [
+        457,
+        83,
+        79,
+        21
+      ]
+    },
+    {
+      "seed": 67,
+      "mode": "coherent",
+      "steps": 640,
+      "visits": 0,
+      "firstVisitTick": null,
+      "finalDistance": 171.04022401241005,
+      "pathLength": 1332.3444841101993,
+      "contacts": 35,
+      "meanOdor": 0.07526115461196123,
+      "meanPurity": 0.9999999999999998,
+      "spikeCount": 2516,
+      "actions": [
+        202,
+        260,
+        146,
+        32
+      ]
+    },
+    {
+      "seed": 67,
+      "mode": "dephased",
+      "steps": 640,
+      "visits": 0,
+      "firstVisitTick": null,
+      "finalDistance": 294.3726476816068,
+      "pathLength": 1182.5706265942565,
+      "contacts": 4,
+      "meanOdor": 0.20085987429538385,
+      "meanPurity": 0.4204167404583693,
+      "spikeCount": 2319,
+      "actions": [
+        186,
+        142,
+        192,
+        120
+      ]
+    },
+    {
+      "seed": 67,
+      "mode": "classical",
+      "steps": 640,
+      "visits": 3,
+      "firstVisitTick": 155,
+      "finalDistance": 162.71049908421855,
+      "pathLength": 1874.699999999989,
+      "contacts": 0,
+      "meanOdor": 0.7003483694439866,
+      "meanPurity": 1,
+      "spikeCount": 2662,
+      "actions": [
+        451,
+        116,
+        46,
+        27
+      ]
+    },
+    {
+      "seed": 79,
+      "mode": "coherent",
+      "steps": 640,
+      "visits": 0,
+      "firstVisitTick": null,
+      "finalDistance": 535.4212737714163,
+      "pathLength": 1359.9568894703377,
+      "contacts": 28,
+      "meanOdor": 0.09558988804834151,
+      "meanPurity": 1,
+      "spikeCount": 2553,
+      "actions": [
+        204,
+        283,
+        128,
+        25
+      ]
+    },
+    {
+      "seed": 79,
+      "mode": "dephased",
+      "steps": 640,
+      "visits": 0,
+      "firstVisitTick": null,
+      "finalDistance": 389.5875197704813,
+      "pathLength": 1240.8291667005826,
+      "contacts": 7,
+      "meanOdor": 0.10938878226304916,
+      "meanPurity": 0.46321605607705274,
+      "spikeCount": 2383,
+      "actions": [
+        210,
+        121,
+        195,
+        114
+      ]
+    },
+    {
+      "seed": 79,
+      "mode": "classical",
+      "steps": 640,
+      "visits": 3,
+      "firstVisitTick": 285,
+      "finalDistance": 20.614470687536848,
+      "pathLength": 1847.2458059162977,
+      "contacts": 2,
+      "meanOdor": 0.7348358737074178,
+      "meanPurity": 0.9999999999999998,
+      "spikeCount": 2876,
+      "actions": [
+        444,
+        70,
+        91,
+        35
+      ]
+    },
+    {
+      "seed": 97,
+      "mode": "coherent",
+      "steps": 640,
+      "visits": 0,
+      "firstVisitTick": null,
+      "finalDistance": 94.14934069009007,
+      "pathLength": 1232.6844321292033,
+      "contacts": 28,
+      "meanOdor": 0.10835068662056643,
+      "meanPurity": 1,
+      "spikeCount": 2644,
+      "actions": [
+        173,
+        260,
+        143,
+        64
+      ]
+    },
+    {
+      "seed": 97,
+      "mode": "dephased",
+      "steps": 640,
+      "visits": 0,
+      "firstVisitTick": null,
+      "finalDistance": 428.77652146554186,
+      "pathLength": 1244.6890800175547,
+      "contacts": 3,
+      "meanOdor": 0.03917136054313603,
+      "meanPurity": 0.5013779486913138,
+      "spikeCount": 2559,
+      "actions": [
+        205,
+        97,
+        232,
+        106
+      ]
+    },
+    {
+      "seed": 97,
+      "mode": "classical",
+      "steps": 640,
+      "visits": 1,
+      "firstVisitTick": 156,
+      "finalDistance": 104.96551831234295,
+      "pathLength": 1854.1499999999817,
+      "contacts": 0,
+      "meanOdor": 0.48248980534041175,
+      "meanPurity": 0.9999999999999998,
+      "spikeCount": 2667,
+      "actions": [
+        444,
+        96,
+        69,
+        31
+      ]
+    }
+  ]
+}

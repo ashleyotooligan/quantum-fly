@@ -1,0 +1,18 @@
+{
+  "name": "quantum-fly",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A fly-inspired neural controller with a phase-sensitive two-qubit decision loop.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "experiments": "node scripts/experiments.mjs",
+    "build": "node scripts/build.mjs",
+    "screenshots": "node scripts/capture.mjs"
+  },
+  "license": "MIT",
+  "author": "Ashley Tooligan"
+}

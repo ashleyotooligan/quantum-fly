@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, cite this repository and its version."
+title: "Quantum Fly: a phase-sensitive synthetic neural laboratory"
+type: software
+version: 0.1.0
+date-released: 2026-10-09
+authors:
+  - family-names: Tooligan
+    given-names: Ashley
+license: MIT
+repository-code: "https://github.com/ashleyotooligan/quantum-fly"
+abstract: "A fly-inspired synthetic spiking controller connected to a classical two-qubit circuit simulator, with inspectable decisions and reproducible local experiments."

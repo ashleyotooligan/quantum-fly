@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {runSimulation,step,checkpoint,restoreCheckpoint} from '../src/core/simulation.mjs';
+import {WORLD} from '../src/core/world.mjs';
+import {summarize} from '../src/lab/analysis.mjs';
+test('complete replay is deterministic for fixed configuration',()=>{const a=runSimulation({steps:70}),b=runSimulation({steps:70});assert.deepEqual(a.frames,b.frames);});
+test('checkpoint resumes the exact next decision and subsequent state',()=>{const a=runSimulation({steps:95,dephasing:0.25}),b=restoreCheckpoint(checkpoint(a));for(let i=0;i<50;i++)assert.deepEqual(step(a),step(b));});
+test('paired policies consume the same uniform draws',()=>{const a=runSimulation({steps:100,mode:'coherent'}),b=runSimulation({steps:100,mode:'classical'});assert.deepEqual(a.frames.map(f=>f.uniform),b.frames.map(f=>f.uniform));assert.notDeepEqual(a.frames.map(f=>f.body),b.frames.map(f=>f.body));});
+test('body stays inside the arena with finite energy',()=>{for(const mode of ['coherent','dephased','classical']){const a=runSimulation({steps:640,mode});for(const f of a.frames){assert.ok(f.body.x>=14&&f.body.x<=WORLD.width-14);assert.ok(f.body.y>=14&&f.body.y<=WORLD.height-14);assert.ok(f.body.energy>=0&&f.body.energy<=1);}assert.equal(summarize(a).actions.reduce((s,v)=>s+v,0),640);}});
+test('checkpoint rejects malformed wiring and random state',()=>{const c=checkpoint(runSimulation({steps:10}));assert.throws(()=>restoreCheckpoint({...c,randomState:-1}));const n=structuredClone(c);n.network.links[0].from=49;assert.throws(()=>restoreCheckpoint(n));const v=structuredClone(c);v.network.v[0]=null;assert.throws(()=>restoreCheckpoint(v));});
+test('phase fork changes the trajectory without changing initialization',()=>{const a=runSimulation({steps:200,phase:0}),b=runSimulation({steps:200,phase:Math.PI/2});assert.deepEqual(a.network.links,b.network.links);assert.deepEqual(a.frames.map(f=>f.uniform),b.frames.map(f=>f.uniform));assert.notDeepEqual(a.body,b.body);});

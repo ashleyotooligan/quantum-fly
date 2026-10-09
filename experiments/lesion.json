@@ -1,0 +1,10 @@
+{
+  "experiment": "recurrent-group-silencing",
+  "seed": 41,
+  "steps": 640,
+  "mode": "coherent",
+  "intervention": { "lesion": true, "units": [16, 31] },
+  "control": { "lesion": false },
+  "metric": ["group rates", "action odds", "path", "final distance"],
+  "entrypoint": "runSimulation({seed:41,steps:640,lesion:true})"
+}

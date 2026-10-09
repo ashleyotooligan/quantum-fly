@@ -1,0 +1,10 @@
+{
+  "experiment": "frozen-input-phase",
+  "params": { "theta0": 1.3, "theta1": 0.7, "phi": 0.65, "readout": 0.8 },
+  "vary": "phi",
+  "from": -3.141592653589793,
+  "to": 3.141592653589793,
+  "points": 65,
+  "gamma": 0,
+  "readout": "exact-density-diagonal"
+}

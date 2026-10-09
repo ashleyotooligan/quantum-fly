@@ -1,0 +1,11 @@
+{
+  "experiment": "matched-policy-navigation",
+  "seeds": [11, 17, 23, 29, 31, 41, 53, 67, 79, 97],
+  "steps": 640,
+  "modes": ["coherent", "dephased", "classical"],
+  "phase": 0,
+  "dephasing": 0,
+  "lesion": false,
+  "matched": ["initial body", "network wiring", "world", "one uniform draw per tick"],
+  "not_matched_after_divergence": ["sensory history", "neural activity"]
+}

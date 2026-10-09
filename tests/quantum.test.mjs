@@ -1,0 +1,18 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {cx,abs2} from '../src/quantum/complex.mjs';
+import {H,ry,rz,lift,CNOT,applyVector} from '../src/quantum/gates.mjs';
+import {outer,dephase,evolveDensity,trace,purity,probabilities,reducedBloch} from '../src/quantum/density.mjs';
+import {decisionCircuit,sampleBorn} from '../src/quantum/circuit.mjs';
+import {FIXED_PARAMS,phaseSweep} from '../src/lab/analysis.mjs';
+const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-10,`${a} != ${b}`);
+test('Hadamard twice restores the initial vector',()=>{const s=[cx(1),cx(),cx(),cx()];const end=applyVector(applyVector(s,lift(H,0)),lift(H,0));end.forEach((z,i)=>near(abs2(z),Number(i===0)));});
+test('RY and its inverse preserve a complex state',()=>{let s=applyVector([cx(1),cx(),cx(),cx()],lift(H,1));s=applyVector(s,lift(rz(0.7),1));const end=applyVector(applyVector(s,lift(ry(0.9),1)),lift(ry(-0.9),1));end.forEach((z,i)=>{near(z[0],s[i][0]);near(z[1],s[i][1]);});});
+test('H then CNOT creates Bell probabilities with big-endian q0',()=>{const s=applyVector(applyVector([cx(1),cx(),cx(),cx()],lift(H,0)),CNOT);const r=outer(s);probabilities(r).forEach((v,i)=>near(v,i===0||i===3?0.5:0));reducedBloch(r,0).forEach(v=>near(v,0));near(purity(r),1);});
+test('CNOT is its own inverse',()=>{const s=[cx(),cx(),cx(1),cx()];assert.deepEqual(applyVector(applyVector(s,CNOT),CNOT),s);});
+test('density and pure-state evolution agree',()=>{const s=applyVector([cx(1),cx(),cx(),cx()],lift(H,1));const u=lift(rz(0.43),1),a=outer(applyVector(s,u)),b=evolveDensity(outer(s),u);a.forEach((row,i)=>row.forEach((z,j)=>{near(z[0],b[i][j][0]);near(z[1],b[i][j][1]);}));});
+test('dephasing a Bell state preserves populations and erases off-diagonals',()=>{const r=outer(applyVector(applyVector([cx(1),cx(),cx(),cx()],lift(H,0)),CNOT));const full=dephase(r,1);near(trace(full),1);near(full[0][3][0],0);near(purity(full),0.5);const half=dephase(r,0.5);near(half[0][3][0],0.125);});
+test('circuit remains normalized, Hermitian, and pure without noise over a parameter grid',()=>{for(let i=0;i<24;i++){const q=decisionCircuit({...FIXED_PARAMS,theta0:i*0.2,phi:i*0.3});near(trace(q.rho),1);near(purity(q.rho),1);near(q.probabilities.reduce((a,b)=>a+b,0),1);q.rho.forEach((row,a)=>row.forEach((z,b)=>{near(z[0],q.rho[b][a][0]);near(z[1],-q.rho[b][a][1]);}));}});
+test('phase is visible coherently and invisible after complete dephasing',()=>{const coherent=phaseSweep(FIXED_PARAMS,0),noisy=phaseSweep(FIXED_PARAMS,1);assert.ok(Math.max(...coherent.map(v=>v.p[1]))-Math.min(...coherent.map(v=>v.p[1]))>0.2);for(const v of noisy)v.p.forEach((p,i)=>near(p,noisy[0].p[i]));});
+test('adding 2π to phase leaves the output odds unchanged',()=>{const a=decisionCircuit(FIXED_PARAMS),b=decisionCircuit({...FIXED_PARAMS,phi:FIXED_PARAMS.phi+2*Math.PI});a.probabilities.forEach((v,i)=>near(v,b.probabilities[i]));});
+test('Born sampling honors interval boundaries and rejects invalid inputs',()=>{assert.equal(sampleBorn([0.25,0.25,0.25,0.25],0),0);assert.equal(sampleBorn([0.25,0.25,0.25,0.25],0.25),1);assert.equal(sampleBorn([0.25,0.25,0.25,0.25],0.999),3);assert.throws(()=>sampleBorn([1,1,0,0],0.1));assert.throws(()=>sampleBorn([1,0,0,0],1));assert.throws(()=>decisionCircuit({...FIXED_PARAMS,phi:NaN}));});

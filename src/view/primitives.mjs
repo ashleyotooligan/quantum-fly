@@ -1,0 +1,11 @@
+export const PALETTE={bg:'#050a12',panel:'#0b1421',line:'#22344b',ink:'#edf6ff',muted:'#8196b0',cyan:'#64dcff',violet:'#b496ff',orange:'#ffbc82',green:'#8bdfc0'};
+export function textAt(c,t,x,y,size=18,color=PALETTE.ink,mono=false) {c.fillStyle=color;c.font=`${size}px ${mono?'"DejaVu Sans Mono", monospace':'"DejaVu Sans", Arial, sans-serif'}`;c.textAlign='left';c.textBaseline='top';c.fillText(String(t),x,y);}
+export function line(c,x,y,x2,y2,color=PALETTE.line,width=1) {c.beginPath();c.moveTo(x,y);c.lineTo(x2,y2);c.strokeStyle=color;c.lineWidth=width;c.stroke();}
+export function panel(c,x,y,w,h,label,tag='') {c.fillStyle=PALETTE.panel;c.beginPath();c.roundRect(x,y,w,h,14);c.fill();c.strokeStyle=PALETTE.line;c.lineWidth=1;c.stroke();if(label)textAt(c,label,x+22,y+20,16,PALETTE.muted,true);if(tag)textAt(c,tag,x+w-158,y+21,13,PALETTE.cyan,true);}
+export function dot(c,x,y,r,color) {c.beginPath();c.arc(x,y,r,0,Math.PI*2);c.fillStyle=color;c.fill();}
+export function imageFit(c,img,x,y,w,h,cover=false) {if(!img)return;const s=(cover?Math.max:Math.min)(w/img.width,h/img.height),dw=img.width*s,dh=img.height*s;c.save();c.beginPath();c.rect(x,y,w,h);c.clip();c.drawImage(img,x+(w-dw)/2,y+(h-dh)/2,dw,dh);c.restore();}
+export function glow(c,x,y,r,color) {const g=c.createRadialGradient(x,y,1,x,y,r);g.addColorStop(0,color);g.addColorStop(1,'#050a1200');c.fillStyle=g;c.fillRect(x-r,y-r,2*r,2*r);}
+export function metric(c,x,y,w,label,value,note='',color=PALETTE.cyan) {textAt(c,label,x,y,15,PALETTE.muted,true);textAt(c,value,x,y+29,36,color,true);if(note)textAt(c,note,x,y+78,14,PALETTE.muted);}
+export function rows(c,items,x,y,w,gap=45) {items.forEach((r,i)=>{textAt(c,r[0],x,y+i*gap,16,PALETTE.muted);textAt(c,r[1],x+w*0.55,y+i*gap,16,PALETTE.ink,true);line(c,x,y+i*gap+30,x+w,y+i*gap+30);});}
+export function curve(c,data,x,y,w,h,color,min=0,max=1) {c.beginPath();data.forEach((v,i)=>{const px=x+i/(data.length-1)*w,py=y+h-(v-min)/(max-min)*h;i?c.lineTo(px,py):c.moveTo(px,py);});c.strokeStyle=color;c.lineWidth=2.5;c.stroke();}
+export function grid(c,x,y,w,h,levels=4) {for(let i=0;i<=levels;i++){const yy=y+h*i/levels;line(c,x,yy,x+w,yy,PALETTE.line);textAt(c,(1-i/levels).toFixed(2),x-42,yy-7,12,PALETTE.muted,true);}line(c,x,y,x,y+h);}
